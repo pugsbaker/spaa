@@ -35,6 +35,11 @@ $color-grey: #2d2927;
 	to { transform: translateX(-100%)}
 }
 
+@keyframes sidescroll-large {
+	from { transform: translateX(50%);}
+	to { transform: translateX(-100%);}
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -54,14 +59,40 @@ body {
 
 .background {
 	@include fullscreen;
+	opacity: 0;
+	transition: opacity 1s ease;
 	&.orange {
 		background: $color-orange;
 	}
 	&.red {
-		z-index: -1;
 		background: $color-red;
 	}
+	&.active {
+		transition: opacity 1s ease;
+		opacity: 1;
+	}
 }
+
+.big-text {
+	position:absolute;
+	width: auto;
+	animation: sidescroll-large 25s linear infinite;
+	h1{
+		
+		font-family: "museo-slab";
+		font-size: 100vh;
+		text-transform: uppercase;
+		padding: 0;
+		margin: 0;
+		line-height: 1;
+		
+		.active & {
+			//animation: sidescroll-large 25s linear infinite;
+		}
+	}
+	
+}
+
 
 .footer {
 	@include fullscreen;
@@ -70,6 +101,7 @@ body {
 	height: 40vh;
 	padding-bottom:50px;
 	display: flex;
+	align-items: flex-end;
 }
 
 svg{
@@ -90,8 +122,9 @@ svg{
 	position: relative;
 	flex: 1;
 	overflow: hidden;
+	height: 100%;
 	padding-top: 10vh;
-	@include gradient-mask();
+	//@include gradient-mask();
 	
 	div {
 		white-space: nowrap;
