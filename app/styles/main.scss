@@ -1,6 +1,14 @@
-$color-orange: #f1592a;
-$color-red: #e11b22;
+
 $color-grey: #2d2927;
+$color-one: #ef4130;
+$color-two: #f7941e;
+$color-three: #faa634;
+$color-four: #00addc;
+$color-five: #6dc8bf;
+$color-six: #bcdb2a;
+$color-seven: #f1592a;
+$color-eight: #e11b22;
+
 
 @mixin fullscreen {
 	position: absolute;
@@ -61,11 +69,29 @@ body {
 	@include fullscreen;
 	opacity: 0;
 	transition: opacity 1s ease;
-	&.orange {
-		background: $color-orange;
+	&.one {
+		background: $color-one;
 	}
-	&.red {
-		background: $color-red;
+	&.two {
+		background: $color-two;
+	}
+	&.three {
+		background: $color-three;
+	}
+	&.four {
+		background: $color-four;
+	}
+	&.five {
+		background: $color-five;
+	}
+	&.six {
+		background: $color-six;
+	}
+	&.seven {
+		background: $color-seven;
+	}
+	&.eight {
+		background: $color-eight;
 	}
 	&.active {
 		transition: opacity 1s ease;
@@ -76,11 +102,11 @@ body {
 .big-text {
 	position:absolute;
 	width: auto;
-	animation: sidescroll-large 25s linear infinite;
+	animation: sidescroll-large 30s linear infinite;
 	h1{
 		
 		font-family: "museo-slab";
-		font-size: 100vh;
+		font-size: 60vh;
 		text-transform: uppercase;
 		padding: 0;
 		margin: 0;
@@ -137,6 +163,6 @@ svg{
 		font-size: 3.5em;
 		line-height: 1.2;
 		font-weight: 400;
-		animation: sidescroll 30s linear infinite;
+		animation: sidescroll 60s linear infinite;
 	}
 }
